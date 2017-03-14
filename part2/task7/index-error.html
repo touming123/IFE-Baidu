@@ -48,20 +48,20 @@
     <button id="post">后序</button>
 
     <script tpye="text/javascript">
-        var treeNodes = [];
-
         /**
              * 前序遍历
             */
         function preOrder(root) {
-            treeNodes.push(root);
-            var children = root.children;
-            if (children.length === 1) {
-                 preOrder(children[0]);
-            } else if (children.length === 2) {
-                preOrder(children[0]);
-                preOrder(children[1]);
-            }
+            root.style.border = "1px solid blue";
+            setTimeout(function () {
+                var children = root.children;
+                if (children.length === 1) {
+                    preOrder(children[0]);
+                } else if (children.length === 2) {
+                    preOrder(children[0]);
+                    preOrder(children[1]);
+                }
+            }, 1000);
         }
 
         /**
@@ -70,79 +70,47 @@
         function inOrder(root) {
             var children = root.children;
             if (children.length >= 1) {
-                 preOrder(children[0]);
+                inOrder(children[0]);
             }
-            treeNodes.push(root);
+            root.style.border = "1px solid green";
             if (children.length === 2) {
-                preOrder(children[1]);
+                setTimeout(function () {
+                    inOrder(children[1]);
+                }, 1000);
+
             }
         }
 
-        /**
-         * 后序遍历
-        */
+
         function postOrder (root) {
             var children = root.children;
             if (children.length === 1) {
-                 preOrder(children[0]);
+                setTimeout(function () {
+                    postOrder(children[0]);
+                }, 1000);
+               
             } else if (children.length === 2) {
-                preOrder(children[0]);
-                preOrder(children[1]);
+                setTimeout(function () {
+                    postOrder(children[0]);
+                }, 1000);
+                setTimeout(function () {
+                    postOrder(children[1]);
+                }, 2000);
             }
-            treeNodes.push(root);
-        }
-
-        function changeColor () {
-            if (treeNodes.length >= 1) {
-                change(0);
-            }
-        }
-        function change(i) {
-            if (i < treeNodes.length) {
-                treeNodes[i].style.backgroundColor = 'red';
-                setTimeout (function(){
-                    treeNodes[i].style.backgroundColor = 'white';
-                    setTimeout(function() {
-                        change(i+1);
-                    }, 1000);
-                }, 1000)
-            }
-        }
-
-        //方法不可用，会一下变成白色
-        function changeColor0 () {
-            for (var i = 0; i < treeNodes.length; i++) {
-                treeNodes[i].style.backgroundColor = 'red';
-
-                setTimeout((function(i) {
-                    return function () {
-                        treeNodes[i].style.backgroundColor = 'white';
-                    }
-                })(i), 1000)
-            }
-        }
-
-        function clearTreeNodes() {
-            treeNodes = [];
+            root.style.border = '1px solid grey';
+            
         }
 
         function init() {
             var root = document.getElementById("root");
             document.getElementById('pre').onclick = function () {
-                clearTreeNodes();
                 preOrder(root);
-                changeColor();
-                
             }
             document.getElementById('in').onclick = function () {
-                clearTreeNodes();
                 inOrder(root);
-                changeColor();
             }
             document.getElementById('post').onclick = function () {
-                clearTreeNodes();
                 postOrder(root);
-                changeColor();
             }
         }
         init();

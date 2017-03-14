@@ -24,28 +24,38 @@
 </head>
 
 <body>
-    <div class="tree" id="root">
-        <div class='tree'>
-            <div class='tree'>
-                <div class='tree'></div>
-                <div class='tree'></div>
+    <div class="tree" id="root">aa
+        <div class='tree'>bb
+            <div class='tree'>cc</div>
+            <div class='tree'>d
+                <div class='tree'>cc</div>
+                <div class='tree'>f</div>
+                <div class='tree'>g</div>
             </div>
-            <div class='tree'>
-                <div class='tree'></div>
-                <div class='tree'></div>
+            <div class='tree'>h
+                <div class='tree'>i
+                    <div class='tree'>j</div>
+                </div>
+                <div class='tree'>kkk</div>
             </div>
         </div>
-        <div class='tree'>
-            <div class='tree'>
-                <div class='tree'></div>
-                <div class='tree'></div>
+        <div class='tree'>ll
+            <div class='tree'>mmmm
+                <div class='tree'>n
+                    <div class='tree'>oooo</div>
+                    <div class='tree'>p</div>
+                    <div class='tree'>qq</div>
+                </div>
+                <div class='tree'>rrrr</div>
             </div>
-            <div class='tree'></div>
+            <div class='tree'>sss
+                <div class='tree'>ttt</div>
+            </div>
         </div>
     </div>
-    <button id="pre">前序</button>
-    <button id="in">中序</button>
-    <button id="post">后序</button>
+    <button id="pre">遍历</button>
+    <input type="text" id ="word">
+    <button id="search">查找</button>
 
     <script tpye="text/javascript">
         var treeNodes = [];
@@ -56,40 +66,9 @@
         function preOrder(root) {
             treeNodes.push(root);
             var children = root.children;
-            if (children.length === 1) {
-                 preOrder(children[0]);
-            } else if (children.length === 2) {
-                preOrder(children[0]);
-                preOrder(children[1]);
+            for (var i = 0; i < children.length; i++) {
+                preOrder(children[i]);
             }
-        }
-
-        /**
-         * 中序遍历
-        */
-        function inOrder(root) {
-            var children = root.children;
-            if (children.length >= 1) {
-                 preOrder(children[0]);
-            }
-            treeNodes.push(root);
-            if (children.length === 2) {
-                preOrder(children[1]);
-            }
-        }
-
-        /**
-         * 后序遍历
-        */
-        function postOrder (root) {
-            var children = root.children;
-            if (children.length === 1) {
-                 preOrder(children[0]);
-            } else if (children.length === 2) {
-                preOrder(children[0]);
-                preOrder(children[1]);
-            }
-            treeNodes.push(root);
         }
 
         function changeColor () {
@@ -122,6 +101,30 @@
             }
         }
 
+        function searchNode() {
+            var word = document.getElementById('word').value;
+            if (treeNodes.length >= 1) {
+                search(0, word);
+            }
+        }
+
+        function search (i, word) {
+            if (i < treeNodes.length) {
+                treeNodes[i].style.backgroundColor = 'blue';
+                setTimeout (function(){
+                    if (treeNodes[i].innerHTML.indexOf(word) === 0) {
+                        treeNodes[i].style.backgroundColor = 'red';
+                    } else {
+                        treeNodes[i].style.backgroundColor = 'white';
+                    }
+                    
+                    setTimeout(function() {
+                        search(i+1, word);
+                    }, 1000);
+                }, 1000)
+            }
+        }
+
         function clearTreeNodes() {
             treeNodes = [];
         }
@@ -132,17 +135,11 @@
                 clearTreeNodes();
                 preOrder(root);
                 changeColor();
-                
             }
-            document.getElementById('in').onclick = function () {
+            document.getElementById('search').onclick = function () {
                 clearTreeNodes();
-                inOrder(root);
-                changeColor();
-            }
-            document.getElementById('post').onclick = function () {
-                clearTreeNodes();
-                postOrder(root);
-                changeColor();
+                preOrder(root);
+                searchNode();
             }
         }
         init();
