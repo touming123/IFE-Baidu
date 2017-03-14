@@ -1,0 +1,171 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 04</title>
+    <style>
+        span {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 0px 10px;
+            line-height: 30px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="num">
+    <button id="left-in">左侧入</button>
+    <button id="right-in">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+    <button id="sort">排序</button>
+    <!-- 数字队列 -->
+    <div id="queue">
+
+    </div>
+
+    <script type="text/javascript">
+        /**
+         * leftIn方法
+         * 点击"左侧入"，将input中输入的数字从左侧插入队列中
+         */
+        function leftIn(queue) {
+            var num = document.getElementById('num').value;
+            if (checkInput(num)) {
+                var queue = document.getElementById('queue');
+                var span  = document.createElement('span');
+                span.style.height = num+'px';
+                if (queue.childNodes.length > 60) {
+                    alert("当前元素超过60");
+                } else {
+                    queue.insertBefore(span, queue.childNodes[0]);
+                }
+                
+            }
+        }
+
+        /**
+         * rightIn方法
+         * 点击"右侧入"，将input中输入的数字从右侧插入队列中
+         */
+        function rightIn(queue) {
+            var num = document.getElementById('num').value;
+            if (checkInput(num)) {
+                var queue = document.getElementById('queue');
+                var span  = document.createElement('span');
+                span.style.height = num+'px';
+                if (queue.childNodes.length > 60) {
+                    alert("当前元素超过60");
+                } else {
+                    queue.appendChild(span);
+                }
+                
+            }
+        }
+
+        /**
+         * leftOut方法
+         * 点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值
+         */
+        function leftOut(queue) {
+           var queue = document.getElementById('queue');
+           var spanList = queue.childNodes;
+           if (spanList.length === 0) {
+               alert("队列中已经没有元素");
+           } else {
+               alert(parseInt(spanList[0].style.height));
+               queue.removeChild(spanList[0]);
+           }
+        }
+
+        /**
+         * rightOut方法
+         * 点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值
+         */
+        function rightOut(queue) {
+            var queue = document.getElementById('queue');
+            var spanList = queue.childNodes;
+            if (spanList.length === 0) {
+                alert("队列中已经没有元素");
+            } else {
+                alert(parseInt(spanList[spanList.length-1].style.height));
+                queue.removeChild(spanList[spanList.length-1]);
+            }
+        }
+
+        function sort(queue) {
+            var queue = document.getElementById('queue');
+            var spanList = queue.children;
+            for (var i = 0, len = spanList.length; i < len; i++) {
+                for (var j = i+1; j < len; j++) {
+                    if (parseInt(spanList[i].style.height) > parseInt(spanList[j].style.height)) {
+                        var node = queue.removeChild(spanList[i]);
+                        queue.insertBefore(node, spanList[j]);
+                    }
+                }
+            }
+
+        }
+
+        /**
+         * 输入验证
+         * 输入不能为空，而且只能是整数
+         */
+        function checkInput(num) {
+            var reg = /^\d*$/;
+            if (num === '') {
+                alert("输入不能为空");
+                return false;
+            } else if (!reg.test(num)) {
+                alert("请输入整数");
+                return false;
+            } else if (!(num >= 10 && num <= 100)) {
+                 alert("请输入10~100之间的整数");
+                 return false;
+            }
+            return true;
+            
+        }
+
+
+        function init() {
+
+            var queue = document.getElementById("queue");
+
+            document.getElementById("left-in").onclick = function () {
+                leftIn(queue);
+            };
+            document.getElementById("right-in").onclick = function () {
+                rightIn(queue);
+            };
+            document.getElementById("left-out").onclick = function () {
+                leftOut(queue);
+            };
+            document.getElementById("right-out").onclick = function () {
+                rightOut(queue);
+            };
+            document.getElementById("sort").onclick = function () {
+                sort(queue);
+            };
+
+            /**
+             * deleteClick方法
+             * 点击队列中任何一个元素，则该元素会被从队列中删除
+             * 动态生成的节点绑定事件需要利用事件委托原理
+             */
+            document.getElementById("queue").onclick = function (e) {
+               
+            }
+        }
+
+        init();
+
+    </script>
+</body>
+
+</html>
