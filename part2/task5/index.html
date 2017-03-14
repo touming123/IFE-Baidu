@@ -104,8 +104,11 @@
             for (var i = 0, len = spanList.length; i < len; i++) {
                 for (var j = i+1; j < len; j++) {
                     if (parseInt(spanList[i].style.height) > parseInt(spanList[j].style.height)) {
-                        var node = queue.removeChild(spanList[i]);
-                        queue.insertBefore(node, spanList[j]);
+                        // var node = queue.removeChild(spanList[i]);
+                        // queue.insertBefore(node, spanList[j]);
+                        var temp = spanList[i].style.height;
+                        spanList[i].style.height = spanList[j].style.height;
+                        spanList[j].style.height = temp;
                     }
                 }
             }
