@@ -1,0 +1,117 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="uff-8">
+    <title>IFE JavaScript Task 07</title>
+    <style type="text/css">
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .tree {
+            flex: flex;
+            display: -webkit-flex;
+            border: 1px solid gray;
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tree" id="root">aa
+        <div class='tree'>bb
+            <div class='tree'>cc</div>
+            <div class='tree'>d
+                <div class='tree'>cc</div>
+            </div>
+            <div class='tree'>h
+                <div class='tree'>i
+                    <div class='tree'>j</div>
+                </div>
+                <div class='tree'>kkk</div>
+            </div>
+        </div>
+        <div class='tree'>ll
+            <div class='tree'>mmmm</div>
+            <div class='tree'>sss
+                <div class='tree'>ttt</div>
+            </div>
+        </div>
+    </div>
+    <button id="delete">删除</button>
+    <input type="text" id ="word">
+    <button id="add">添加</button>
+
+    <script tpye="text/javascript">
+        /**
+         * 点击某个节点元素，则该节点元素呈现一个特殊被选中的样式
+        */
+        function chooseDiv(ev) {
+            clearDiv();
+            var div = ev.target;
+            div.style.backgroundColor = "red";
+        }
+
+        /**
+         * 清除所有div的样式
+         */
+        function clearDiv() {
+            var divs = document.getElementsByTagName("div");
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.backgroundColor = "white";
+            }
+        }
+
+        /**
+         * 删除节点
+         */
+        function deleteNode(divs) {
+            for (var i = 0; i < divs.length; i++) {
+                if (divs[i].style.backgroundColor === "red") {
+                    var parent = divs[i].parentElement;
+                    parent.removeChild(divs[i]);
+                }
+            }
+        }
+
+        /**
+         * 增加节点
+         */
+        function addNode(divs) {
+            var word = document.getElementById("word").value;
+            var node = document.createElement("div");
+            node.className = "tree";
+            node.innerHTML = word;
+            for (var i = 0; i < divs.length; i++) {
+                if (divs[i].style.backgroundColor === "red") {
+                    divs[i].appendChild(node);
+                }
+            }
+        }
+
+        function init() {
+            var root = document.getElementById("root");
+            var divs = document.getElementsByTagName("div");
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].onclick = function(ev) {
+                    chooseDiv(ev);
+                    ev.stopPropagation();
+                }
+            }
+            document.getElementById("delete").onclick = function() {
+                deleteNode(divs);
+            }
+            document.getElementById("add").onclick = function() {
+                addNode(divs);
+            }
+        }
+        init();
+    </script>
+</body>
+
+</html>
