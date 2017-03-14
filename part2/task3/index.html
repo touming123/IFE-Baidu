@@ -75,6 +75,12 @@
          * 格式见ul中的注释的部分
          */
         function render(data) {
+            // if (data[0][0].substring(0, 1) === '第') {
+            //     return;
+            // }
+            if (data[0][0].indexOf('第') === 0) {
+                return;
+            }
             var arr = ['一', '二', '三', '四', '五', '六', '七'];
             var ul = document.getElementById('source');
             var list = '';
