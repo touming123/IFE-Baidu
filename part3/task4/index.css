@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    font-family: "微软雅黑";
+    font-size: 18px;
+}
+
+.container {
+    width: 505px;
+    height: 540px;
+    margin: 40px auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.number {
+    width: 525px;
+    height: 25px;
+    display: flex;
+    display: -webkit-box;
+    justify-content: center;
+}
+
+.rownum {
+    display: block;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+}
+
+.rownum:first-child {
+    margin-left: 30px;
+}
+
+.row {
+    width: 505px;
+    height: 45px;
+    display: flex;
+    display: -webkit-box;
+    justify-content: center;
+}
+
+.column {
+    width: 45px;
+    height: 45px;
+    border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    box-sizing: -webkit-border-box;
+}
+
+.colNum {
+    width: 30px;
+    height: 45px;
+    display: inline-block;
+    align-content: center;
+}
+
+.column:last-child {
+    border-right: 1px solid #e8e8e8;
+}
+
+.row:nth-child(11) {
+    border-bottom: 2px solid #222222;
+}
+
+#go {
+    width: 170px;
+    height: 26px;
+    border: 1px solid #e8e8e8;
+    margin: 10px;
+    display: inline-block;
+}
+
+#ok {
+    width: 46px;
+    height: 30px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.move {
+    width: 45px;
+    height: 45px;
+    border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    box-sizing: -webkit-border-box;
+    position: relative;
+    display: block;
+}
+
+#half1 {
+    width: 45px;
+    height: 10px;
+    background-color: #0302f9;
+}
+
+#half2 {
+    width: 45px;
+    height: 35px;
+    background-color: #fc0200;
+}
+
+#half3 {
+    width: 10px;
+    height: 45px;
+    background-color: #0302f9;
+}
+
+#left #half3 {
+    position: absolute;
+    left: 0;
+}
+
+#right #half3 {
+    position: absolute;
+    right: 0;
+}
+
+#half4 {
+    width: 35px;
+    height: 45px;
+    background-color: #fc0200;
+}
+
+#left #half4 {
+    position: absolute;
+    right: 0;
+}
+
+#right #half4 {
+    position: absolute;
+    left: 0;
+}
+
+.hide {
+    display: none;
+}
