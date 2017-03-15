@@ -3,6 +3,7 @@
     height: 100%;
     margin: 0;
     font-family: "微软雅黑";
+    font-size: 25px;
 }
 .container {
     width: 100%;
@@ -11,33 +12,34 @@
     padding: 10px;
     display: flex;
     display: -webkit-flex;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
 }
 .item {
-    /*width: 100%;*/
-    height: 30px;
+    width: 784px;
+    height: 70px;
     margin: 0 auto;
 }
 .descript {
     margin-right: 10px;
 }
 .info {
-    width: 300px;
-    border: 1px solid gray;
-    border-radius: 2px;
+    width: 540px;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 0 10px;
 }
 .btn {
-    width: 80px;
-    border: 1px solid cornflowerblue;
-    border-radius: 2px;
-    background-color: cornflowerblue;
+    width: 108px;
+    border: 1px solid #2f79b9;
+    border-radius: 5px;
+    background-color: #2f79b9;
     margin-left: 10px;
-    margin-right: 10px;
 }
 .result {
-    font-size: 10px;
+    width: 300px;
+    height: 30px;
     left: 30%;
     position: absolute;
     margin-top: 10px;

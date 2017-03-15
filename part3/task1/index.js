@@ -22,8 +22,8 @@
             }
             if (flag && len>=4 && len <= 16) {
                 result.innerHTML = "名称格式正确";
-                result.style.color = "green";
-                input.style.borderColor = "green";
+                result.style.color = "#5ebc45";
+                input.style.borderColor = "#5ebc45";
             } else {
                 result.innerHTML = "名称格式有误";
                 result.style.color = "red";
