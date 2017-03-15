@@ -36,7 +36,7 @@
 .info {
     width: 620px;
     height: 40px;
-    border: 1px solid #f5f5f5;
+    border: 2px solid #f5f5f5;
     border-radius: 5px;
     padding: 0 10px;
 }
@@ -57,4 +57,8 @@
     background-color: #2f79b9;
     position: absolute;
     right: 0;
+}
+.btn:hover {
+    border: 2px solid #1f578b;
+    background-color: #1f578b;
 }
