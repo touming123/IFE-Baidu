@@ -108,6 +108,10 @@ aside {
     padding: 20px 20px;
     margin: 20px 20px;
 }
+aside h1 {
+    border-left: 5px solid #646562;
+    padding-left: 10px;
+}
 .register {
     margin: 20px 30px 20px 200px; 
     position: relative;
