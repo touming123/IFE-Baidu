@@ -148,3 +148,10 @@ textarea {
     border-radius: 10px;
     color: #ffffff;
 }
+footer {
+    height: 70px;
+    background-color: #000000;
+    line-height: 70px;
+    text-align: center;
+    color: #ffffff;
+}
