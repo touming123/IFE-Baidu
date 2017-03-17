@@ -13,7 +13,6 @@
 img {
     width: 80px;
     height: 80px;
-    margin: 20px;
 }
 .left {
     width: 200px;
@@ -21,6 +20,9 @@ img {
     box-sizing: border-box;
     border: 1px solid #999;
     background-color: #fff;
+    margin: 20px;
+}
+.left img {
     margin: 20px;
 }
 .left .name {
@@ -35,9 +37,15 @@ img {
     background-color: #fff;
     padding: 10px;
 }
+.right img {
+    margin: 20px 20px 0 20px;
+}
+.ringht img:last-child {
+    margin-bottom: 20px;
+}
 .right {
     width: 120x;
-    height: 480px;
+    height: 420px;
     right: 20px;
     top: 20px;
     position: absolute;
@@ -59,4 +67,8 @@ img {
     background-color: #fff;
     margin: 20px;
 }*/
-
+.right::after {
+    content: "";
+    display: block;
+    clear: both;
+}
