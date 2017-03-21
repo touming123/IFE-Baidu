@@ -43,6 +43,7 @@ img {
 .ringht img:last-child {
     margin-bottom: 20px;
 }
+/*
 .right {
     width: 120x;
     height: 420px;
@@ -55,8 +56,8 @@ img {
     flex-direction: column;
     background-color: #fff;
 }
-
-/*.right {
+*/
+.right {
     width: 120x;
     height: 480px;
     float: right;
@@ -66,7 +67,7 @@ img {
     flex-direction: column;
     background-color: #fff;
     margin: 20px;
-}*/
+}
 .right::after {
     content: "";
     display: block;
