@@ -26,6 +26,10 @@
         node.style.width = width + 'px';
         node.style.height = height + 'px';
         node.className = 'container';
+        node.onclick = function() {
+            var container = document.getElementsByClassName('container')[0];
+            document.body.removeChild(container);
+        }
     }
     
     function setWrapStyle(node) {
@@ -35,6 +39,9 @@
         var w = node.style.width/2;
         node.style.top = height/2 - 320/2 + 'px';
         node.style.left = width/2 - 650/2 + 'px';
+        node.onclick = function(e) {
+            e.stopPropagation();
+        }
     }
 
     function setHeadStyle(node) {
@@ -50,13 +57,15 @@
         var btnOk = document.createElement('button');
         btnOk.className = 'btnOk';
         btnOk.innerHTML = '确定';
-        btnOk.onclick = function() {
+        btnOk.onclick = function(e) {
+            e.stopPropagation();
             clickOK();
         }
         var btnCancle = document.createElement('button');
         btnCancle.className = 'btnCancle';
         btnCancle.innerHTML = '取消';
-        btnCancle.onclick = function() {
+        btnCancle.onclick = function(e) {
+            e.stopPropagation();
             clickCancle();
         }
         node.appendChild(btnOk);
