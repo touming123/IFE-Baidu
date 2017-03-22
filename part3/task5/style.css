@@ -47,6 +47,8 @@ button {
     position: absolute;
     left: 106px;
     top: 314px;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
 }
 .direct {
     width: 50px;
