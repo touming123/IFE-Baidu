@@ -34,11 +34,12 @@
     
     function setWrapStyle(node) {
         node.className = 'wrap';
+		/*
         var width = document.body.scrollWidth;
         var height = document.body.scrollHeight;
         var w = node.style.width/2;
         node.style.top = height/2 - 320/2 + 'px';
-        node.style.left = width/2 - 650/2 + 'px';
+        node.style.left = width/2 - 650/2 + 'px';*/
         node.onclick = function(e) {
             e.stopPropagation();
         }

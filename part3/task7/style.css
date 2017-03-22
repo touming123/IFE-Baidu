@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    font-family: "w微软雅黑";
+    font-size: 25px;
+    border: solid #B9B6B6;
+    border-width: 2px 0 0 2px;
+}
+th, td {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: solid #B9B6B6;
+    border-width: 0 2px 2px 0;
+}
+th {
+    background-color: #5C5C5C;
+    color: #fff;
+    position: relative;
+}
+.up {
+    width: 0;
+    height: 0;
+    border-width: 0 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.down {
+    width: 0;
+    height: 0;
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;   
+}
+td {
+    color: #333;
+}
