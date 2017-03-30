@@ -31,6 +31,9 @@ pro.convert = function(key, val) {
     })
 }
 
+pro.$watch = function(attr, callback) {
+    
+}
 
 let data = {
     user: {
