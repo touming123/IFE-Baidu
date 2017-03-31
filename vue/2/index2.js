@@ -1,7 +1,7 @@
 function Observer(data) {
     this.data = data;
     this.walk(data);
-    this.handlers = new Event();
+    this.handlers = {};
 }
 
 let pro = Observer.prototype;
@@ -45,7 +45,7 @@ pro.convert = function (key, val) {
             console.log('你设置了' + key);
             console.log('新的' + key + '=' + newVal);
             //触发$watch函数
-            self.handlers.emit(key, val, newVal);
+            self.emit(key, val, newVal);
             val = newVal;
             //设置新的值是一个对象,继续响应getter和setter
             if (typeof newVal === 'object') {
@@ -58,8 +58,29 @@ pro.convert = function (key, val) {
 /**
  * 订阅事件
  */
+pro.on = function (key, handler) {
+    let self = this;
+    if (!(key in self.handlers)) {
+        self.handlers[key] = [];
+    }
+    self.handlers[key].push(handler);
+    return self;
+}
+
+pro.emit = function (key, ...args) {
+    let handlers = this.handlers[key];
+    if (handlers) {
+        handlers.forEach(function(item) {
+            item(...args);
+        });
+    } 
+}
+
+/**
+ * 订阅事件
+ */
 pro.$watch = function (key, fn) {
-    this.handlers.on(key, fn);
+    this.on(key, fn);
 }
 
 
