@@ -1,10 +1,1 @@
-###ÈÎÎñÄ¿µÄ###
-
-    ÔÚÉÏÒ»ÈÎÎñ»ù´¡ÉÏ¼ÌÐøJavaScriptµÄÌåÑé
-    Ñ§Ï°JavaScriptÖÐµÄifÅÐ¶ÏÓï·¨£¬forÑ­»·Óï·¨
-    Ñ§Ï°JavaScriptÖÐµÄÊý×é¶ÔÏó
-    Ñ§Ï°ÈçºÎ¶ÁÈ¡¡¢´¦ÀíÊý¾Ý£¬²¢¶¯Ì¬´´½¨¡¢ÐÞ¸ÄDOMÖÐµÄÄÚÈÝ
-
-###ÈÎÎñÃèÊö###
-
-    ²Î¿¼ÒÔÏÂÊ¾Àý´úÂë£¬Ò³Ãæ¼ÓÔØºó£¬½«Ìá¹©µÄ¿ÕÆøÖÊÁ¿Êý¾ÝÊý×é£¬°´ÕÕÄ³ÖÖÂß¼­£¨±ÈÈç¿ÕÆøÖÊÁ¿´óÓÚ60£©½øÐÐ¹ýÂËÉ¸Ñ¡£¬×îºó½«·ûºÏÌõ¼þµÄÊý¾Ý°´ÕÕÒ»¶¨µÄ¸ñÊ½ÒªÇóÏÔÊ¾ÔÚÍøÒ³ÉÏ
+ï»¿
