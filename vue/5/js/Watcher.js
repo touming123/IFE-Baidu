@@ -1,5 +1,4 @@
 class Watcher{
-    /**订阅者 */
     constructor(options) {
         this.key = options.key;
         this.observer = options.observer;
@@ -8,7 +7,6 @@ class Watcher{
     }
 
     get() {
-        //当前依赖设置成我
         Dep.target = this;
         let value = this.observer.data[this.key];
         if (typeof value === 'object') {

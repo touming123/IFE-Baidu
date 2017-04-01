@@ -1,4 +1,4 @@
-class Event{
+class Dep{
     constructor() {
         this.subs = [];
     }
@@ -10,9 +10,9 @@ class Event{
     }
     
     notify() {
-        for (let sun of this.subs) {
-            sub.updata();
-        }
+        this.subs.forEach(function(sub) {
+            sub.update();
+        });
     }
 }
-Event.target = null;
+Dep.target = null;

@@ -1,6 +1,7 @@
 class Observer {
     constructor (data) {
         this.data = data;
+        this.dep = new Dep();
         this.walk(data);
     }
 
@@ -17,33 +18,28 @@ class Observer {
     }
 
     convert(key, value) {
-        let self = this,
-            dep = new Dep();
+        let self = this;
+
         Object.defineProperty(self.data, key, {
             enumerable: true,
             configurable: true,
             get: function() {
-                console.log(`你访问了${key}`);
-                //添加订阅者watcher到主题对象Dep
                 if (Dep.target) {
-                    dep.addSub(Dep.target);
+                    self.dep.addSub(Dep.target);
                 }
                 return value;
             },
             set: function(newVal) {
-                console.log(`你设置了${key}， 新值为${newVal}`);
                 if (typeof newVal === 'object') {
                     new Observer(newVal);
                 }
                 value = newVal;
-                //作为发布者发出通知
-                dep.notify();
+                self.dep.notify();
             }
         });
     }
     
     $watch(key, fn) {
-        //订阅
         new Watcher({
             observer: this,
             key: key,
