@@ -82,6 +82,7 @@ li {
 
 .pics li:nth-child(1) {
     background-color: #008100;
+    display: block;
 }
 
 .pics li:nth-child(2) {
