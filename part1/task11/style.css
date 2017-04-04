@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #91d6d9;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    left: 0;
+}
+
+#back-btn img {
+    width: 35px;
+    height: 30px;
+    display: inline-block;
+    transform: translateY(8px);
+    /**为什么不在水平呢？*/
+}
+
+.back p {
+    display: inline-block;
+    font-size: 22px;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+nav {
+    background-color: #fff;
+}
+
+.nav-wrap {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 59px;
+    font-size: 20px;
+    color: #656565;
+}
+
+.nav-wrap li {
+    height: 59px;
+    width: 20%;
+    text-align: center;
+    line-height: 59px;
+    list-style: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.nav-wrap li:hover {
+    border-bottom: 5px solid #91d6d9;
+}
+
+#nav-heading {
+    width: 100%;
+    height: 200px;
+}
+
+.tag-wrap {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 20px 0;
+    border-bottom: 2px solid #dedede;
+}
+
+.tag {
+    width: 20%;
+    height: 110px;
+    float: left;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag img {
+    width: 65px;
+    height: 65px;
+}
+
+.tag p {
+    font-size: 19px;
+    color: #303030;
+}
+
+.sub-wrap {
+    width: 100%;
+    height: 175px;
+    margin: 20px 0;
+}
+
+.sub {
+    width: 32%;
+    float: left;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub:nth-child(2) {
+    border-left: 2px solid #dedede;
+    border-right: 2px solid #dedede;
+}
+
+.sub>img {
+    height: 80px;
+    display: inline-block;
+}
+
+.sub>h1 {
+    font-size: 25px;
+    color: #2d2d2d;
+    margin: 10px 0;
+}
+
+.sub>h2 {
+    font-size: 19px;
+    color: #5c5c5c;
+}
+
+section {
+    padding: 12px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+section>h1 {
+    font-size: 22px;
+    color: #656565;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 2px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+.part1 {
+    height: 130px;
+    position: relative;
+}
+
+.part1>img {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.essay-wrap {
+    width: 240px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.essay {
+    display: inline-block;
+    background-color: #f8f8f8;
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.essay>p {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.article {
+    padding: 20px 0;
+    border-bottom: 2px solid #dedede;
+    overflow: hidden;
+}
+
+.article:last-child {
+    border-bottom: 0;
+}
+
+.article>img {
+    width: 120px;
+    height: 80px;
+    display: block;
+    float: left;
+}
+
+.heading {
+    width: 200px;
+    height: 80px;
+    display: block;
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+
+.heading>h2 {
+    font-size: 20px;
+    color: #656565;
+    position: absolute;
+    top: 0;
+}
+
+.heading>.time {
+    font-size: 18px;
+    color: #c5c5c5;
+    position: absolute;
+    bottom: 0;
+}
+
+.heading::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.img-wrap {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.img-wrap>img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    display: block;
+    float: left;
+}
+
+.article>h2 {
+    font-size: 20px;
+    color: #656565;
+}
+
+.article>.time {
+    font-size: 18px;
+    color: #c5c5c5;
+}
