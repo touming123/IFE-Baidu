@@ -1,0 +1,14 @@
+$base: 50px;
+.box {
+    position: absolute;
+    width: $base;
+    height: $base;
+    background-size: $base $base;
+}
+
+.people {
+    position: absolute;
+    width: $base;
+    height: $base;
+    background-size: $base $base;
+}
