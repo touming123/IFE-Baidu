@@ -11,31 +11,30 @@ module.exports = {
   entry: './src/app.js',
   output: {
     path: resolve('dist'),
-    publicPath: env === 'production' ? '/feifanh5star/' : '/dist/',
+    publicPath: env === 'production' ? '/pushBox/' : '/dist/',
     filename: 'bundle.js'
-  },  
+  },
 
   devServer: {
     contentBase: __dirname,
     port: 3000
   },
   resolve: {
-    extensions: ['.js','.json'],
+    extensions: ['.js', '.json'],
     alias: {
       'src': resolve('src'),
       'common': resolve('src/common')
     }
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         enforce: 'pre',
         include: resolve('src'),
         use: [{
           loader: 'eslint-loader',
           options: {
-             formatter: require('eslint-friendly-formatter')
+            formatter: require('eslint-friendly-formatter')
           }
         }]
       },
